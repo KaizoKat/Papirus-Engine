@@ -150,6 +150,15 @@
     <ClCompile Include="Papirus\Source Files\glad.c" />
     <ClCompile Include="Papirus\Source Files\Main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Papirus\Resource Files\default_.vrs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Papirus\Resource Files\default_.frs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Papirus\Header Files\shader.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

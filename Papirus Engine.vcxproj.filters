@@ -22,4 +22,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Papirus\Resource Files\default_.vrs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Papirus\Resource Files\default_.frs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Papirus\Header Files\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
