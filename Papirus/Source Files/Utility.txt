@@ -1,0 +1,30 @@
+
+
+Shader Paths
+
+the fragment shader
+"Papirus/Resource Files/Shaders/default_.frs"
+
+the vertex shader
+"Papirus/Resource Files/Shaders/default_.frs"
+
+
+Texture Paths
+
+Container
+"Papirus/Resource Files/Textures/container.jpg"
+
+Awesome Face
+"Papirus/Resource Files/Textures/awesomeface.png"
+
+Copper Ore
+"Papirus/Resource Files/Textures/CopperOre.png"
+
+Empty
+"Papirus/Resource Files/Textures/Empty.png"
+
+Screenshot (or Stone wit background)
+"Papirus/Resource Files/Textures/Screenshot.png"
+
+Stone
+"Papirus/Resource Files/Textures/Stone.png"

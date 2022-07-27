@@ -149,15 +149,25 @@
   <ItemGroup>
     <ClCompile Include="Papirus\Source Files\glad.c" />
     <ClCompile Include="Papirus\Source Files\Main.cpp" />
+    <ClCompile Include="Papirus\Source Files\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Papirus\Resource Files\default_.vrs" />
+    <None Include="Papirus\Resource Files\Shaders\default_.vrs" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Papirus\Resource Files\default_.frs" />
+    <Text Include="Papirus\Resource Files\Shaders\default_.frs" />
+    <Text Include="Papirus\Source Files\Utility.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Papirus\Header Files\shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Papirus\Resource Files\Textures\awesomeface.png" />
+    <Image Include="Papirus\Resource Files\Textures\container.jpg" />
+    <Image Include="Papirus\Resource Files\Textures\CopperOre.png" />
+    <Image Include="Papirus\Resource Files\Textures\Empty.png" />
+    <Image Include="Papirus\Resource Files\Textures\Screenshot.png" />
+    <Image Include="Papirus\Resource Files\Textures\Stone.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
