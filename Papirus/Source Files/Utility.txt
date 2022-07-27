@@ -2,10 +2,10 @@
 
 Shader Paths
 
-the fragment shader
-"Papirus/Resource Files/Shaders/default_.frs"
-
 the vertex shader
+"Papirus/Resource Files/Shaders/default_.vrs"
+
+the fragment shader
 "Papirus/Resource Files/Shaders/default_.frs"
 
 
