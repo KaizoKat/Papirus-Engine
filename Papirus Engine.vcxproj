@@ -71,19 +71,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\include;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
+    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\includes;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
     <LibraryPath>B:\OpenGL Projects\Papirus Engine\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\include;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
+    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\includes;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
     <LibraryPath>B:\OpenGL Projects\Papirus Engine\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\include;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
+    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\includes;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
     <LibraryPath>B:\OpenGL Projects\Papirus Engine\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\include;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
+    <IncludePath>B:\OpenGL Projects\Papirus Engine\Libraries\includes;B:\OpenGL Projects\Papirus Engine\Papirus\Header Files;$(IncludePath)</IncludePath>
     <LibraryPath>B:\OpenGL Projects\Papirus Engine\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -159,6 +159,7 @@
     <Text Include="Papirus\Source Files\Utility.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Papirus\Header Files\camera.h" />
     <ClInclude Include="Papirus\Header Files\shader.h" />
   </ItemGroup>
   <ItemGroup>

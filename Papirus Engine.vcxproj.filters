@@ -36,6 +36,9 @@
     <ClInclude Include="Papirus\Header Files\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Papirus\Header Files\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Papirus\Resource Files\Textures\Stone.png">
