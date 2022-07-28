@@ -34,3 +34,12 @@ Screenshot (or Stone wit background)
 
 Stone
 "Papirus/Resource Files/Textures/Stone.png"
+
+Coltainer 2
+"Papirus/Resource Files/Textures/container2.png"
+
+Conatiner 2 Specular
+"Papirus/Resource Files/Textures/container2_specular.png"
+
+Container 2 Specular color
+"Papirus/Resource Files/Textures/container2_specular_colored.png"
