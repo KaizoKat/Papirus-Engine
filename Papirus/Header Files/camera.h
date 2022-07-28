@@ -95,36 +95,25 @@ public:
     }
 
     // processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-    void ProcessMouseMovement(GLFWwindow* window,GLboolean constrainPitch = true)
+    void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch = true)
     {
-        glfwGetCursorPos(window, &mouseX, &mouseY);
-        glfwGetWindowSize(window, &width, &height);
+        xoffset *= MouseSensitivity;
+        yoffset *= MouseSensitivity;
 
-        xOffseter += (prevMouseX - mouseX) * MouseSensitivity;
-        yOffseter -= (prevMouseY - mouseY) * MouseSensitivity;
+        Yaw += xoffset;
+        Pitch += yoffset;
 
-        if (mouseX < 1)
-            mouseRePosX = width;
-        else if (mouseX > width - 1)
-            mouseRePosX = 1;
-        else
-            mouseRePosX = mouseX;
+        // make sure that when pitch is out of bounds, screen doesn't get flipped
+        if (constrainPitch)
+        {
+            if (Pitch > 89.0f)
+                Pitch = 89.0f;
+            if (Pitch < -89.0f)
+                Pitch = -89.0f;
+        }
 
-        if (mouseY < 1)
-            mouseRePosY = height;
-        else if (mouseY > height - 1)
-            mouseRePosY = 1;
-        else
-            mouseRePosY = mouseY;
-
-        Pitch = yOffseter;
-        Yaw = -xOffseter;
-
-        glfwSetCursorPos(window, mouseRePosX, mouseRePosY);
-        //glfwSetCursorPos(window,  mouseRePosX, mouseY);
+        // update Front, Right and Up Vectors using the updated Euler angles
         updateCameraVectors();
-        prevMouseX = mouseX;
-        prevMouseY = mouseY;
     }
 
     // processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
