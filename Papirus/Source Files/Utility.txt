@@ -3,10 +3,16 @@
 Shader Paths
 
 the vertex shader
-"Papirus/Resource Files/Shaders/default_.vrs"
+"Papirus/Resource Files/Shaders/default.vrs"
 
 the fragment shader
-"Papirus/Resource Files/Shaders/default_.frs"
+"Papirus/Resource Files/Shaders/default.frs"
+
+the light vertex shader
+"Papirus/Resource Files/Shaders/lighting.vrs"
+
+the light fragment shader
+"Papirus/Resource Files/Shaders/lighting.frs"
 
 
 Texture Paths
