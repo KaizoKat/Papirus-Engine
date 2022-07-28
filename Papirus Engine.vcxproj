@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Papirus\Header Files\camera.h" />
+    <ClInclude Include="Papirus\Header Files\Mesh.h" />
     <ClInclude Include="Papirus\Header Files\shader.h" />
   </ItemGroup>
   <ItemGroup>
