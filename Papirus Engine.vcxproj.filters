@@ -35,13 +35,49 @@
     <Text Include="Papirus\Source Files\Utility.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Papirus\Header Files\shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Papirus\Header Files\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Papirus\Header Files\Mesh.h">
+    <ClInclude Include="Papirus\Header Files\animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\animator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\animdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\assimp_glm_helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\bone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\model_animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\shader_c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\shader_m.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\shader_s.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Papirus\Header Files\shader_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
