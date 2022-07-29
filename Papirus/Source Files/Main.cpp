@@ -17,8 +17,8 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow* window);
 
 // settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_WIDTH = 1280;
+const unsigned int SCR_HEIGHT = 720;
 
 // camera
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
@@ -72,11 +72,11 @@ int main()
     glCullFace(GL_FRONT);
     glFrontFace(GL_CW);
     
-    stbi_set_flip_vertically_on_load(true);
+    stbi_set_flip_vertically_on_load(false);
     // build and compile our shader zprogram
     // ------------------------------------
     Shader ourShader("Papirus/Resource Files/Shaders/default.vrs", "Papirus/Resource Files/Shaders/default.frs");
-    Model ourModel("Papirus/Resource Files/Models/backpack/backpack.obj");
+    Model ourModel("Papirus/Resource Files/Models/new Island/new_island.obj");
     // load models
     // -----------
 
@@ -107,7 +107,7 @@ int main()
         ourShader.use();
 
         // view/projection transformations
-        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.001f, 100000.0f);
         glm::mat4 view = camera.GetViewMatrix();
         ourShader.setMat4("projection", projection);
         ourShader.setMat4("view", view);
