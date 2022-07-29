@@ -161,8 +161,21 @@
     <Text Include="Papirus\Source Files\Utility.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Papirus\Header Files\animation.h" />
+    <ClInclude Include="Papirus\Header Files\animator.h" />
+    <ClInclude Include="Papirus\Header Files\animdata.h" />
+    <ClInclude Include="Papirus\Header Files\assimp_glm_helpers.h" />
+    <ClInclude Include="Papirus\Header Files\bone.h" />
     <ClInclude Include="Papirus\Header Files\camera.h" />
+    <ClInclude Include="Papirus\Header Files\entity.h" />
+    <ClInclude Include="Papirus\Header Files\mesh.h" />
+    <ClInclude Include="Papirus\Header Files\model.h" />
+    <ClInclude Include="Papirus\Header Files\model_animation.h" />
     <ClInclude Include="Papirus\Header Files\shader.h" />
+    <ClInclude Include="Papirus\Header Files\shader_c.h" />
+    <ClInclude Include="Papirus\Header Files\shader_m.h" />
+    <ClInclude Include="Papirus\Header Files\shader_s.h" />
+    <ClInclude Include="Papirus\Header Files\shader_t.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Papirus\Resource Files\Textures\awesomeface.png" />
