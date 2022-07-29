@@ -68,11 +68,11 @@ int main()
     // configure global opengl state
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
-    //glEnable(GL_CULL_FACE);
-    //glCullFace(GL_FRONT);
-    //glFrontFace(GL_CCW);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_FRONT);
+    glFrontFace(GL_CW);
     
-
+    stbi_set_flip_vertically_on_load(true);
     // build and compile our shader zprogram
     // ------------------------------------
     Shader ourShader("Papirus/Resource Files/Shaders/default.vrs", "Papirus/Resource Files/Shaders/default.frs");
