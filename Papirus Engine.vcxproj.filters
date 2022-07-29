@@ -33,6 +33,7 @@
   <ItemGroup>
     <Text Include="Papirus\Resource Files\Shaders\default.frs" />
     <Text Include="Papirus\Source Files\Utility.txt" />
+    <Text Include="Papirus\Resource Files\Shaders\Text.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Papirus\Header Files\camera.h">
