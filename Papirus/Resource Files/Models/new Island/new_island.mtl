@@ -1,5 +1,5 @@
 # Blender MTL File: 'island.blend'
-# Material Count: 17
+# Material Count: 19
 
 newmtl Fence
 Ns 179.999996
@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rough_wood_diff_1k.jpg
+map_Kd -s 1.000000 0.400000 1.000000 rough_wood_diff_1k.jpg
 
 newmtl Fence.001
 Ns 179.999996
@@ -21,7 +21,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rough_wood_diff_1k.jpg
+map_Kd -s 1.000000 0.400000 1.000000 rough_wood_diff_1k.jpg
 
 newmtl Fence.002
 Ns 179.999996
@@ -32,7 +32,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rough_wood_diff_1k.jpg
+map_Kd -s 1.000000 0.400000 1.000000 rough_wood_diff_1k.jpg
 
 newmtl Fence.003
 Ns 179.999996
@@ -43,7 +43,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rough_wood_diff_1k.jpg
+map_Kd -s 1.000000 0.400000 1.000000 rough_wood_diff_1k.jpg
 
 newmtl Fence.004
 Ns 179.999996
@@ -54,7 +54,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rough_wood_diff_1k.jpg
+map_Kd -s 1.000000 0.400000 1.000000 rough_wood_diff_1k.jpg
 
 newmtl Material
 Ns 0.000000
@@ -65,7 +65,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 1
-map_Kd -s 10.00000 10.00000 10.00000 TexturesCom_Nature_Moss_1K_albedo.jpg
+map_Kd -s 0.100000 0.100000 0.100000 TexturesCom_Nature_Moss_1K_albedo.jpg
 
 newmtl Material.001
 Ns 225.000000
@@ -76,19 +76,18 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd -s 0.400000 0.100000 0.400000 weathered_brown_planks_diff_1k.jpg
-map_Ks -s 0.400000 0.100000 0.400000 weathered_brown_planks_disp_1k.png
+map_Kd -s 0.100000 0.100000 0.100000 weathered_brown_planks_diff_1k.jpg
 
 newmtl Material.002
 Ns 900.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
+Ks 0.000000 0.000000 0.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 1
-map_Kd -s 10.00000 10.00000 10.00000 TexturesCom_Wall_Cobblestone1_3x3_1K_albedo.jpg
+map_Kd -s 10.000000 10.000000 10.000000 TexturesCom_Wall_Cobblestone1_3x3_1K_albedo.jpg
 
 newmtl Material.003
 Ns 900.000000
@@ -100,6 +99,26 @@ Ni 1.450000
 d 1.000000
 illum 1
 map_Kd Swimming_pool_background_for_summer.jpg
+
+newmtl Material.004
+Ns 900.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.487273
+illum 1
+map_Kd grass.png
+map_d grass.png
+
+newmtl None
+Ns 500
+Ka 0.8 0.8 0.8
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
 
 newmtl Rock
 Ns 179.999996
@@ -154,7 +173,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rock_05_diff_1k.jpg
+map_Kd -s 1.000000 0.400000 1.000000 rock_05_diff_1k.jpg
 
 newmtl Stone
 Ns 179.999996
@@ -175,7 +194,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rock_05_diff_1k.jpg
+map_Kd -s 0.100000 0.100000 0.100000 rock_05_diff_1k.jpg
 
 newmtl Stones_2
 Ns 179.999996
@@ -186,4 +205,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd -s 0.400000 0.400000 0.400000 rock_05_diff_1k.jpg
+map_Kd -s 0.100000 0.100000 0.100000 rock_05_diff_1k.jpg

@@ -36,10 +36,10 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-float moveSpeed;
-
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
+float moveSpeed;
+bool startHeld = false;
 int main()
 {
     // glfw: initialize and configure
@@ -80,16 +80,15 @@ int main()
     glCullFace(GL_FRONT);
     glFrontFace(GL_CW);
     glDepthFunc(GL_LESS);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     stbi_set_flip_vertically_on_load(false);
 
     // build and compile our shader zprogram
     // ------------------------------------
     Shader ourShader("Papirus/Resource Files/Shaders/default.vrs", "Papirus/Resource Files/Shaders/default.frs");
-    Model ourModel("Papirus/Resource Files/Models/new Island/new_island.obj");
-    // load models
-    // -----------
-
+    Model ourModel("Papirus/Resource Files/Models/new Island/new_island.obj"); //NOT WORKING
 
     ourShader.use();
     ourShader.setInt("material.diffuse", 0);
@@ -97,7 +96,7 @@ int main()
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -117,15 +116,17 @@ int main()
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+
         // don't forget to enable shader before setting uniforms
         ourShader.use();;
         ourShader.setVec3("viewPos", camera.Position);
         ourShader.setFloat("material.shininess", 1.0f);
 
         ourShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-        ourShader.setVec3("dirLight.ambient", 0.8f, 0.8f, 0.8f);
-        ourShader.setVec3("dirLight.diffuse", 0.8f, 0.8f, 0.8f);
-        ourShader.setVec3("dirLight.specular", 0.3f, 0.3f, 0.3f);
+        ourShader.setVec3("dirLight.ambient", 0.5f, 0.5f, 0.5f);
+        ourShader.setVec3("dirLight.diffuse", 0.6f, 0.6f, 0.6f);
+        ourShader.setVec3("dirLight.specular", 0.6f, 0.6f, 0.6f);
 
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.001f, 300.0f);
@@ -154,7 +155,8 @@ int main()
     return 0;
 }
 
-
+bool cameraHold;
+bool hol;
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
 
@@ -168,10 +170,23 @@ void processInput(GLFWwindow* window)
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
-
-
-    //right butt
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
+        cameraHold = true;
+    else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_RELEASE)
+        cameraHold = false;
+
+    if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS && hol != startHeld)
+    {
+        startHeld = !startHeld;
+        hol = startHeld;
+    }
+    else if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_RELEASE && hol == startHeld)
+        hol = !hol;
+
+    if (startHeld == true)
+        cameraHold = true;
+    //right butt
+    if(cameraHold)
     {
         if (firstMouse)
         {
@@ -197,7 +212,7 @@ void processInput(GLFWwindow* window)
         if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
             camera.ProcessKeyboard(GO_DOWN, deltaTime, moveSpeed);
     }
-    else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_RELEASE)
+    else
     {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
         glfwSetCursorPosCallback(window, NULL);
@@ -244,4 +259,41 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
     camera.ProcessMouseScroll(static_cast<float>(yoffset));
+}
+
+unsigned int loadTexture(char const* path)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+
+    int width, height, nrComponents;
+    unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
+    if (data)
+    {
+        GLenum format;
+        if (nrComponents == 1)
+            format = GL_RED;
+        else if (nrComponents == 3)
+            format = GL_RGB;
+        else if (nrComponents == 4)
+            format = GL_RGBA;
+
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT); // for this tutorial: use GL_CLAMP_TO_EDGE to prevent semi-transparent borders. Due to interpolation it takes texels from next repeat 
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        stbi_image_free(data);
+    }
+    else
+    {
+        std::cout << "Texture failed to load at path: " << path << std::endl;
+        stbi_image_free(data);
+    }
+
+    return textureID;
 }
