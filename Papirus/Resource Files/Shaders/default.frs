@@ -79,7 +79,7 @@ void main()
 
     vec3 distance = abs(viewPos - norm);
 
-    if(texColor.a < 0.1)
+    if(texColor.a < 0.5)
         discard;
 
     FragColor = vec4(result, texColor.a);
