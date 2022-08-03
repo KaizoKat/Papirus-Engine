@@ -43,6 +43,7 @@ Set Up VS C++
 3. Click on the wrench right above, or go to Project > Properties.
 4. clock on VC C++ Directories and make sure that the include and library directories are set up properly.
 5. If they aren't:
+
             i. First double-click on the arrow down on the "include Directories" row.
             ii. Click on edit.
             iii. make sure that the first file path is : ..\Papirus Engine\Libraries\include
